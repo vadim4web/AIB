@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Simple nice logo animation build with JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="AB.png" type="image/png">
+    <title>A<3B | 1abcdesign</title>
+    <style>
+        :root {
+            --side: min(100vw, 100vh);
+            --side_75: min(75vw, 75vh);
+            --side_50: min(50vw, 50vh);
+            --side_25: min(25vw, 25vh);
+            --s_div_50: calc((var(--side)/100)*2);
+            --s_div_100: calc(var(--side)/100);
+            --s_div_12: calc((var(--side)/100)*12);
+            --s_div_20: calc((var(--side)/100)*20);
+            --s_div_25: calc((var(--side)/100)*25);
+            --s_div_33: calc((var(--side)/100)*33);
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 200%;
+            overflow: hidden;
+            text-align: center;
+            background-color: #000;
+        }
+
+        .centered {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mirrored {
+            display: block;
+            transform: scale(1, -1);
+            -webkit-transform: scale(1, -1);
+            -moz-transform: scale(1, -1);
+            -ms-transform: scale(1, -1);
+            -o-transform: scale(1, -1);
+            opacity: 0.5;
+            font-size: 100%;
+            text-shadow: 0 0 1vh whitesmoke;
+        }
+
+
+        #logo_wrapper {
+            width: 100%;
+            height: 30vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #logo {
+
+            height: var(--side_12);
+            width: var(--side);
+            display: flex;
+            flex-wrap: wrap;
+
+
+        }
+
+        #logo div {
+            margin: 0;
+            padding: 0;
+            width: var(--s_div_50);
+            height: var(--s_div_50);
+            background-color: white;
+        }
+
+        @keyframes AIB_shdw_txt {
+            0% {
+                text-shadow: 0px 0px 24px whitesmoke;
+            }
+
+            25% {
+                text-shadow: 0px 0px 12px whitesmoke;
+            }
+
+            50% {
+                text-shadow: 0px 0px 6px whitesmoke;
+            }
+
+            100% {
+                text-shadow: 0px 0px 24px whitesmoke;
+            }
+        }
+
+
+        @keyframes AIB_bx-shdw {
+            0% {
+                box-shadow: 0px 0px 24px 6px white;
+            }
+
+            25% {
+                box-shadow: 0px 0px 12px 9px white;
+            }
+
+            50% {
+                box-shadow: 0px 0px 6px 12px white;
+            }
+
+            100% {
+                box-shadow: 0px 0px 24px 6px white;
+            }
+        }
+
+        @keyframes AIB_brdr_rds {
+            0% {
+                border-radius: var(--s_div_100);
+                -webkit-border-radius: var(--s_div_100);
+                -moz-border-radius: var(--s_div_100);
+                -ms-border-radius: var(--s_div_100);
+                -o-border-radius: var(--s_div_100);
+            }
+
+            25% {
+                border-radius: 0px;
+                -webkit-border-radius: 0px;
+                -moz-border-radius: 0px;
+                -ms-border-radius: 0px;
+                -o-border-radius: 0px;
+            }
+
+            50% {
+                border-radius: 0%;
+                -webkit-border-radius: 0%;
+                -moz-border-radius: 0%;
+                -ms-border-radius: 0%;
+                -o-border-radius: 0%;
+            }
+
+            100% {
+                border-radius: var(--s_div_100);
+                -webkit-border-radius: var(--s_div_100);
+                -moz-border-radius: var(--s_div_100);
+                -ms-border-radius: var(--s_div_100);
+                -o-border-radius: var(--s_div_100);
+            }
+        }
+
+        .shadowed {
+            animation-name: AIB_bx-shdw, AIB_brdr_rds;
+            animation-duration: 4s, 7s;
+            animation-iteration-count: infinite;
+        }
+
+        .shadowed_txt {
+            animation-name: AIB_shdw_txt;
+            animation-duration: 11s;
+            animation-iteration-count: infinite;
+
+        }
+
+        #timer,
+        #timer_2 {
+            color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: var(--side);
+            height: 28vh;
+            font-size: 10vh;
+        }
+
+        #copy_rigths {
+            font-size: 3vh;
+            font-weight: 900;
+            width: 100vw;
+            height: 15vh;
+        }
+        #logo {
+            position: relative;
+            box-shadow: 0 0 1rem #fff;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            const YEAR = new Date().getFullYear()
+            document.title = `© ${YEAR} A<3B | 1abcdesign`
+            document.getElementById('year').innerHTML = YEAR
+        };
+    </script>
+</head>
+
+<body class="centered">
+    <div id="timer" class="centered"></div>
+    <div id="logo_wrapper" class="centered" height="50%">
+        <div id="logo"></div>
+    </div>
+    <div id="timer_2" class="centered"></div>
+    <div id="copy_rigths" class="shadowed_txt">
+        &copy; <span id="year">2022</span> Vadim <i>1abcdesign</i> Chervoniak-Bogdanov
+    </div>
+
+    <script>
+
+        function myTimer() {
+            const d = new Date();
+            document.getElementById('timer').innerHTML = d.toLocaleTimeString();
+            document.getElementById('timer_2').innerHTML = d.toLocaleTimeString();
+        }
+        document.getElementById('timer_2').classList.add('mirrored');
+
+        window.addEventListener('load', function () {
+            setInterval(myTimer, 1000);
+        });
+
+        function rand(min = 0, max = 255) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function randRGB() {
+            let r = rand().toString();
+            let g = rand().toString();
+            let b = rand().toString();
+            return 'rgb(' + r + ',' + g + ',' + b + ')';
+        }
+
+        let logo = document.getElementById('logo');
+        let AIB_copy_rights = document.getElementById('copy_rights');
+
+        function make_logo_bg() {
+            cur_col = 'black';
+            for (let i = 0; i < 650; i++) {
+                let dot = document.createElement('div');
+                dot.id = i.toString();
+                logo.appendChild(dot);
+                dot.innerText = '';
+                dot.style.backgroundColor = cur_col;
+            }
+        }
+        make_logo_bg();
+
+        function reset_logo_bg() {
+            cur_col = 'black';
+            for (let i = 0; i < 650; i++) {
+                let dot = document.getElementById(i.toString());
+                dot.style.backgroundColor = cur_col;
+                if (dot.classList.contains('shadowed')) {
+                    dot.classList.remove('shadowed');
+                }
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+
+            document.body.style.margin = 0;
+            document.body.style.padding = 0;
+            let min_AIB_id_map = [
+                612, 562, 512, 462, 412, 362, 312, 262, 212, 162, 112, 62, 12,
+                12, 61, 110, 159, 208, 257, 306, 355, 404, 453, 502, 551, 600,
+                552, 504, 456, 408, 360, 312, 264, 216, 168, 120, 72, 24,
+                24, 74, 124, 174, 224, 274, 324, 374, 424, 474, 524, 574, 624,
+                576, 528, 480, 432, 384, 336, 288, 240, 192, 144, 96,
+                48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36,
+                86, 136, 186, 236, 286, 336, 386, 436, 486, 536, 586, 636,
+                587, 538, 489, 440, 391, 342, 293, 244, 195, 146, 97, 48];
+
+
+
+            function paint_j(j, cur_col) {
+                let el = document.getElementById(min_AIB_id_map[j].toString());
+                el.style.backgroundColor = cur_col;
+                el.classList.add('shadowed');
+            }
+
+            const sleep = (milliseconds) => {
+                return new Promise(resolve => setTimeout(resolve, milliseconds));
+            }
+            const doSomething = async (cur_col) => {
+                document.getElementById('copy_rigths').style.setProperty('color', cur_col, 'important');
+                for (let j = 0; j < min_AIB_id_map.length; j++) {
+                    await sleep(100);
+                    paint_j(j, cur_col);
+                }
+            }
+
+            let cur_col = randRGB();
+            doSomething(cur_col);
+
+            const loop_painting = setTimeout(() => {
+                setInterval(function () {
+                    reset_logo_bg();
+                    let cur_col = randRGB();
+                    doSomething(cur_col);
+                }, 12000);
+            }, 1);
+
+            function click_handler(event) {
+                let ET = event.target;
+                if (ET.style.backgroundColor === 'white') {
+                    let myTimeout = setTimeout(() => {
+                        ET.style.backgroundColor = 'green';
+                    }, 500);
+                }
+                else {
+                    let myTimeout = setTimeout(() => {
+                        ET.style.backgroundColor = 'white';
+                    }, 500);
+                }
+            }
+            logo.addEventListener('click', click_handler);
+        });
+    </script>
+</body>
+
+</html>
