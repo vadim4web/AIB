@@ -6,7 +6,7 @@ The AIB project is a web-based application showcasing various HTML, CSS, and Jav
 
 ## Project Screenshot
 
-[![screenshot](https://github.com/1abcdesign/AIB/blob/master/screenshot.png)](https://vadym4che.github.io/AIB/)
+[![screenshot](https://github.com/1abcdesign/AIB/blob/main/screenshot.png)](https://1abcdesign.github.io/AIB/)
 
 ## HTML
 
@@ -62,4 +62,4 @@ This project is open-source and is available under the MIT License, allowing for
 
 ## Author
 
-(č) Vadym Chervoniak
+(č) Vadym Chervoniak-Bogdanov
