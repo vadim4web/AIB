@@ -6,7 +6,7 @@ The AIB project is a web-based application showcasing various HTML, CSS, and Jav
 
 ## Project Screenshot
 
-[![screenshot](https://github.com/1abcdesign/AIB/blob/main/screenshot.png)](https://1abcdesign.github.io/AIB/)
+[![screenshot](https://github.com/vadim4web/AIB/blob/main/screenshot.png)](https://vadim4web.github.io/AIB/)
 
 ## HTML
 
